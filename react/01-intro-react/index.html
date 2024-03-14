@@ -15,5 +15,15 @@
 
     <title>ReactApp</title>
   </head>
-  <body></body>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const divRoot = document.querySelector("#root");
+      const name = "John Doe";
+      const h1Tag = <h1>Hello World! My name is {name}</h1>;
+
+      ReactDOM.render(h1Tag, divRoot);
+    </script>
+  </body>
 </html>
