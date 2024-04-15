@@ -9,3 +9,7 @@
 ## Bibliography
    
    - [Required and recommended installations](https://gist.github.com/Klerith/4a4abfd88a88b2d1f16efd95fea41362)
+
+   - [Create React App](https://create-react-app.dev/docs/getting-started)
+
+   - [Vite](https://vitejs.dev/guide/)
