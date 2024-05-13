@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-function App() {
-  // document.createElement...
-  return <h1>Hello World!!!</h1>;
-}
-
-const App2 = () => <h1>Hello World!!! from arrow function</h1>;
+// import AppHelloWorld from './hello-world-app'; /** default export */
+import { App, App2, HelloWorldApp } from './HelloWorldApp';
+import { FirstApp } from './FirstApp';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
+    <HelloWorldApp />
+    {/* <AppHelloWorld /> --> default export */}
     <App2 />
+
+    <FirstApp />
   </React.StrictMode>,
 );
