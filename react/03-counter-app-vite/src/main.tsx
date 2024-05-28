@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom/client';
 import { App, App2, HelloWorldApp } from './HelloWorldApp';
 import { FirstApp } from './FirstApp';
 
+import './styles.scss';
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
