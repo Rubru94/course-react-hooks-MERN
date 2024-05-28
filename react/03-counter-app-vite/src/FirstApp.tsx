@@ -1,25 +1,24 @@
-const objMessage = {
-  message: 'Hello world !!',
-  title: 'Greeting',
-};
+export interface FirstAppProps {
+  title: string;
+  subtitle?: string;
+  num: number;
+}
 
-const getMessage = (msg?: string): string => {
-  return msg ?? objMessage.message;
-};
+export const FirstApp = ({ title, subtitle = 'default', num }: FirstAppProps) => {
+  // console.log(props);
 
-const getResult = (a: number, b: number): number => {
-  return a + b;
-};
+  /* if (!title) {
+    throw new Error('Prop title not exist !');
+  } */
 
-export const FirstApp = () => {
   return (
     <>
       <h1>First app</h1>
-      <h2>Message: {getMessage('Hi')}</h2>
-      <h3>Result: {getResult(2, 5)}</h3>
+      <p>{title}</p>
+      <p>{subtitle}</p>
+      <p>{num}</p>
       {/* You cannot print objects directly in react (you can use JSON.stringify), nor async function results. */}
       {/* <code>{JSON.stringify(objMessage)}</code> */}
-      <p>Subtitle</p>
     </>
   );
 };
