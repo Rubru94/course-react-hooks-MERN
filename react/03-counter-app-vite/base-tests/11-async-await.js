@@ -9,7 +9,7 @@ export const getImage = async () => {
 
     return url;
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     return 'Image not found';
   }
 };

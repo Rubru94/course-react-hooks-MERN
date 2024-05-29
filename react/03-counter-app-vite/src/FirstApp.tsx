@@ -14,7 +14,7 @@ export const FirstApp = ({ title, subtitle = 'default', num }: FirstAppProps) =>
   return (
     <>
       <h1>First app</h1>
-      <p>{title}</p>
+      <h2 data-testid="test-title">{title}</h2>
       <p>{subtitle}</p>
       <p>{num}</p>
       {/* You cannot print objects directly in react (you can use JSON.stringify), nor async function results. */}
