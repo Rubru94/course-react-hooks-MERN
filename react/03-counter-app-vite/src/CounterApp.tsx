@@ -24,9 +24,15 @@ export const CounterApp = ({ value }: CounterAppProps) => {
       <h2> {counter} </h2>
       {/* equivalent --> it can be simplified by leaving only the reference to the function that will receive the same arguments in same order */}
       {/* <button onClick={(event) => handleAdd(event)}>+1</button> */}
-      <button onClick={handleAdd}> +1 </button>
+      <button data-testid="+1" onClick={handleAdd}>
+        {' '}
+        +1{' '}
+      </button>
       <button onClick={handleSubtract}> -1 </button>
-      <button onClick={handleReset}> Reset </button>
+      <button aria-label="btn-reset" onClick={handleReset}>
+        {' '}
+        Reset{' '}
+      </button>
 
       {/* <button onClick={(event) => handleAdd(event, 1)}>+1</button> */}
     </>
