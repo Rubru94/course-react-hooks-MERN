@@ -2,8 +2,12 @@
 
 import { ChangeEvent, FormEvent, useState } from 'react';
 
-export const AddCategory = () => {
-  const [inputValue, setInputValue] = useState('foo');
+export interface AddCategoryProps {
+  setCategories: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+export const AddCategory = ({ setCategories }: AddCategoryProps) => {
+  const [inputValue, setInputValue] = useState('');
 
   const onInputChange = ({
     target: { value },
@@ -13,13 +17,16 @@ export const AddCategory = () => {
   };
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log(event);
+    event.preventDefault(); // Avoid reload on each form submit
+    if (inputValue.trim().length < 1) return;
+    setCategories((categories) => [inputValue, ...categories]);
+    setInputValue('');
   };
 
   return (
     /* In this case, we could omit fragments (<>) because there is no more than one equal element (in this case form) that is going to be the root node.  */
-    <form onSubmit={(event) => onSubmit(event)}>
+    <form onSubmit={onSubmit}>
+      {/* <form onSubmit={(event) => onSubmit(event)}> */} {/* equivalent */}
       <input
         type="text"
         placeholder="Search gifs"
