@@ -4,10 +4,7 @@ import { GifGrid } from './gif/GifGrid';
 
 export const GifExpertApp = () => {
   // useContextSnippet + Tab
-  const [categories, setCategories] = useState([
-    'Metal Gear Solid',
-    'Final Fantasy',
-  ]);
+  const [categories, setCategories] = useState(['Metal Gear Solid']);
 
   // Hooks must not be created according to conditions
   /* if (true) {
