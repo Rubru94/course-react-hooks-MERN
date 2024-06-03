@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { AddCategory } from './category/AddCategory';
+import { GifGrid } from './gif/GifGrid';
 
 export const GifExpertApp = () => {
   // useContextSnippet + Tab
@@ -29,10 +30,8 @@ export const GifExpertApp = () => {
 
   return (
     <>
-      {/* title */}
       <h1>GifExpertApp</h1>
 
-      {/* Input */}
       <AddCategory
         onNewCategory={(value: string) => onAddCategory(value)}
       ></AddCategory>
@@ -40,13 +39,9 @@ export const GifExpertApp = () => {
       {/* <button onClick={onAddCategory}>Add</button> */}
       {/* <button onClick={(event) => onAddCategory(event)}>Add</button> */}
 
-      {/* Items list */}
-      {/* Item */}
-      <ol>
-        {categories.map((cat) => (
-          <li key={cat}>{cat}</li>
-        ))}
-      </ol>
+      {categories.map((category) => (
+        <GifGrid key={category} category={category} />
+      ))}
     </>
   );
 };

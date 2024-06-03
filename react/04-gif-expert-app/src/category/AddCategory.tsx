@@ -2,7 +2,7 @@
 
 import { ChangeEvent, FormEvent, useState } from 'react';
 
-export interface AddCategoryProps {
+interface AddCategoryProps {
   onNewCategory: React.Dispatch<string>;
 }
 
