@@ -3,10 +3,10 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 
 export interface AddCategoryProps {
-  setCategories: React.Dispatch<React.SetStateAction<string[]>>;
+  onNewCategory: React.Dispatch<string>;
 }
 
-export const AddCategory = ({ setCategories }: AddCategoryProps) => {
+export const AddCategory = ({ onNewCategory }: AddCategoryProps) => {
   const [inputValue, setInputValue] = useState('');
 
   const onInputChange = ({
@@ -18,8 +18,9 @@ export const AddCategory = ({ setCategories }: AddCategoryProps) => {
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Avoid reload on each form submit
-    if (inputValue.trim().length < 1) return;
-    setCategories((categories) => [inputValue, ...categories]);
+    const value = inputValue.trim();
+    if (value.length < 1) return;
+    onNewCategory(value);
     setInputValue('');
   };
 

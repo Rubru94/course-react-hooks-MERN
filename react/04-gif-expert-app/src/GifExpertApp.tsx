@@ -13,9 +13,11 @@ export const GifExpertApp = () => {
     const [categoriesNew, setCategoriesNew] = useState(['Metal Gear Solid']);
   } */
 
-  const onAddCategory = () => setCategories([...categories, 'foo']);
-  // equivalent
-  // const onAddCategory = () => setCategories((cat) => [...cat, 'foo']); // with callback
+  const onAddCategory = (newCategory: string) => {
+    setCategories([newCategory, ...categories]);
+    // equivalent
+    /* const onAddCategory = () => setCategories((cat) => [...cat, 'foo']); */ // with callback
+  };
 
   return (
     <>
@@ -23,9 +25,11 @@ export const GifExpertApp = () => {
       <h1>GifExpertApp</h1>
 
       {/* Input */}
-      <AddCategory setCategories={setCategories}></AddCategory>
+      <AddCategory
+        onNewCategory={(value: string) => onAddCategory(value)}
+      ></AddCategory>
 
-      <button onClick={onAddCategory}>Add</button>
+      {/* <button onClick={onAddCategory}>Add</button> */}
       {/* <button onClick={(event) => onAddCategory(event)}>Add</button> */}
 
       {/* Items list */}
