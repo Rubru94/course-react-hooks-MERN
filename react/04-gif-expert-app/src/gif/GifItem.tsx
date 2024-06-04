@@ -1,12 +1,10 @@
 export interface GifItemProps {
-  id?: string;
+  id: string;
   title: string;
   url: string;
 }
 
-export const GifItem = ({ id, title, url }: GifItemProps) => {
-  console.log({ id, title, url });
-
+export const GifItem = ({ title, url }: GifItemProps) => {
   return (
     <>
       <div className="card">

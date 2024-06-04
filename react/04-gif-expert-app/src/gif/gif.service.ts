@@ -1,3 +1,5 @@
+import { GifItemProps } from './GifItem';
+
 const apiKey = 'Ho51Dc0beMaMoLFsb14AVa96Np4lEcM0';
 const limit = 10;
 
@@ -20,7 +22,7 @@ export const getGifs = async (category: string) => {
         downsized_medium: { url },
       },
     }: giphyImage) => {
-      return { id, title, url };
+      return { id, title, url } as GifItemProps;
     }
   );
 };
