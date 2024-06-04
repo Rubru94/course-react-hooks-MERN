@@ -8,8 +8,6 @@ interface GifGridProps {
 export const GifGrid = ({ category }: GifGridProps) => {
   const { images, isLoading } = useFetchGifs(category); // custom hook
 
-  console.log(isLoading);
-
   return (
     <>
       <h3>{category}</h3>

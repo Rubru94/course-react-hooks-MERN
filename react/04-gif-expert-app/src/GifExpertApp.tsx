@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { AddCategory } from './category/AddCategory';
-import { GifGrid } from './gif/GifGrid';
+import { GifGrid } from './gif';
+import { AddCategory } from './category';
 
 export const GifExpertApp = () => {
   // useContextSnippet + Tab
