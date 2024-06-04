@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getGifs } from './gif.service';
+import { GifItem, GifItemProps } from './GifItem';
 
 interface GifGridProps {
   category: string;
@@ -22,11 +23,20 @@ export const GifGrid = ({ category }: GifGridProps) => {
   return (
     <>
       <h3>{category}</h3>
-      <ol>
-        {images.map(({ id, title }) => (
-          <li key={id}>{title}</li>
+      {/* <div className="card-grid">
+        {images.map(({ id, title, url }) => (
+          <GifItem key={id} title={title} url={url} />
         ))}
-      </ol>
+      </div> */}
+
+      <div className="card-grid">
+        {images.map((image: GifItemProps) => (
+          <GifItem
+            key={image.id}
+            {...image} /* send all properties using spread operator */
+          />
+        ))}
+      </div>
     </>
   );
 };
