@@ -13,12 +13,13 @@ export const GifGrid = ({ category }: GifGridProps) => {
   return (
     <>
       <h3>{category}</h3>
+      {/*  {isLoading ? <h2>Loading ...</h2> : null}  null is not rendered */}
+      {isLoading && <h2>Loading ...</h2>} {/* logic AND */}
       {/* <div className="card-grid">
         {images.map(({ id, title, url }) => (
           <GifItem key={id} id={id} title={title} url={url} />
         ))}
       </div> */}
-
       <div className="card-grid">
         {images.map((image: GifItemProps) => (
           <GifItem
